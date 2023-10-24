@@ -1,0 +1,26 @@
+<!-- projects/templates/projects/project_detail.html -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>{{ myprojects.title }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        {% if myprojects.image %}
+            <img src="{{ myprojects.image.url }}" width="100%">
+        {% endif %}
+    </div>
+    <div class="col-md-4">
+        <h5>About the project:</h5>
+        <p>{{ myprojects.description }}</p>
+        <br>
+        <h5>Technology used:</h5>
+        <p>{{ myprojects.technology }}</p>
+        <h5>Completed on</h5>
+        <p> {{ myprojects.completed_date}}</p>
+        <br>
+        <p>Back to <a href="/projects">List of Projects</a></p>
+        <p>Back to <a href="/" >About Me</a></p>
+    </div>
+</div>
+{% endblock page_content %}
